@@ -10,10 +10,11 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 function installing_tools(){
+    tools=('gedit' 'neovim')
     echo "***********************";
     echo "[+] Installing tools ...";
     echo "***********************";
-    apt install gedit -y;
+    apt install -y ${tools[*]};
     echo "***********************";
     echo "[+] Installs done ...";
     echo "***********************";
@@ -60,6 +61,6 @@ function protecting_grub(){
     #echo 'Password:' $tmp;
 }
 
-#installing_tools;
-protecting_grub;
+installing_tools;
+#protecting_grub;
 #updating_system;
