@@ -1,0 +1,28 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+  #adminer:
+  #  image: adminer
+  #  restart: always
+  #  ports:
+  #    - 8080:8080
+  db:
+    env_file:
+      - "./.env.dev"
+    image: postgres
+    container_name: "psql-db"
+    build: .
+    #restart: always
+    ports:
+      - 5432:5432
+   #enviroment variables
+    #environment:
+    #  - POSTGRES_USER=myuser
+    #  - POSTGRES_PASSWORD=password
+    #  - POSTGRES_DB=db
+    #  - POSTGRES_HOST=localhost
+      #POSTGRES_HOST_AUTH_METHOD: ${POSTGRES_HOST_AUTH_METHOD}
+    
+    #volumes:
+    #- psql_volume:/var/lib/postgresql/data
