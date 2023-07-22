@@ -3,14 +3,15 @@ version: "3.8"
 services:
   db:
     container_name: psql-db
-    image: postgres
+    image: postgres:alpine
     restart: always
     environment:
-      POSTGRES_USER: root
+      POSTGRES_USER: user
+      #POSTGRES_PASSWORD: root12345
       POSTGRES_DB: test_db
       #POSTGRES_DB_PASSWORD_FILE: /run/secrets/db_secret
+      POSTGRES_PASSWORD_FILE: /run/secrets/db_secret
       #Not Working
-      POSTGRES_PASSWORD: root12345
 
     secrets:
       - db_secret

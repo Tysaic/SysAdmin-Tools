@@ -35,3 +35,12 @@ In our case:
 
     ALTER USER username WITH PASSWORD 'password';
     ALTER USER username WITH LOGIN CREATEDB CREATEROLE;
+
+## Inspect Networking 
+
+    sudo docker network ls
+    sudo docker network inspect postgresql_default
+
+## Get logs
+
+    sudo docker logs ID
