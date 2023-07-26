@@ -1,4 +1,6 @@
-Get-ChildItem -Filter *.log -Path $PSScriptRoot\logs | ForEach-Object{
-    $newName = $_.Name -replace "*.log", "*.txt"
-    Rename-Item $_$newName
+cd logs
+Get-ChildItem -Filter *.logs | ForEach-Object{
+#Get-ChildItem -Filter *.log -Path $pwd\logs | ForEach-Object{
+    $newName = $_.Name -replace ".logs", ".txt"
+    Rename-Item $_ $newName
 }
