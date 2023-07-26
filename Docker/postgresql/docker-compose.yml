@@ -17,7 +17,8 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - ./tmp/db:/var/lib/postgresql/data
+      - ./db:/var/lib/postgresql/data
+    #command: chown postgres:postgres /var/lib/postgresql 
 
     networks:
       app_net:
